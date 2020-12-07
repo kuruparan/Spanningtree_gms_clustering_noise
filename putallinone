@@ -1,0 +1,43 @@
+import os
+from matplotlib.image import imread
+import numpy as np
+from gms import GmsMatcher
+from gms import Size
+from gms import DrawingType
+import math
+from enum import Enum
+import cv2
+import pickle
+from random import randrange
+import random
+
+cv2.ocl.setUseOpenCL(False)
+
+data_src= '/home/kuru/Desktop/adiusb/veri-split/noise50out/'
+data_src_out='/home/kuru/Desktop/adiusb/veri-split/noise50outAll/
+
+save_dir = './gms/'
+X = []
+y = []
+direcX=[]
+direcy=[]
+F=[]
+id=[]
+k=0
+exclu=[]
+
+allnoise=[]
+name=[]
+for directory in os.listdir(data_src_ori):
+    #print(directory)
+
+    c=0
+
+    for pic in os.listdir(os.path.join(data_src_ori, directory)):
+        #print(pic)
+        img = cv2.imread(os.path.join(data_src, directory, pic))
+        #img = cv2.resize(img, (224,224))
+        name.append(str(pic))
+        pathout=data_src_out+ '/'+ (str(pic)
+        print(pathout)
+        #cv2.imwrite(pathout, img) 
